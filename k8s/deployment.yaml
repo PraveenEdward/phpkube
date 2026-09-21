@@ -1,0 +1,31 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: php-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: php-app
+  template:
+    metadata:
+      labels:
+        app: php-app
+    spec:
+      containers:
+        - name: php-container
+          image: praveenedward/php:v1
+          envFrom:
+            - configMapRef:
+                name: php-config
+            - secretRef:
+                name: php-secret
+          ports:
+            - containerPort: 80
+          volumeMounts:
+            - name: efs-storage
+              mountPath: /var/www/html/uploads
+      volumes:
+        - name: efs-storage
+          persistentVolumeClaim:
+            claimName: efs-pvc

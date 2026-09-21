@@ -1,0 +1,7 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: php-config
+data:
+  DB_HOST: database-1.crmaqcie6a1h.ap-southeast-1.rds.amazonaws.com
+  DB_NAME: student
