@@ -3,5 +3,5 @@ kind: ConfigMap
 metadata:
   name: php-config
 data:
-  DB_HOST: database-1.crmaqcie6a1h.ap-southeast-1.rds.amazonaws.com
-  DB_NAME: student
+  DB_HOST: "172.31.17.50"
+  DB_NAME: "student"
