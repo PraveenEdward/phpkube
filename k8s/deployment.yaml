@@ -18,8 +18,6 @@ spec:
           envFrom:
             - configMapRef:
                 name: php-config
-            - secretRef:
-                name: php-secret
           ports:
             - containerPort: 80
           volumeMounts:
